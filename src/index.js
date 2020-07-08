@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
+import Login from "./components/Login";
 
 import "./styles.scss";
 
@@ -18,11 +24,23 @@ const App = () => {
       .then(res => setCoinData(res.data))
       .catch(err => console.log(err));
   }, []);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Charts coinData={coinData} />
-    </div>
+    <Router>
+      <div className="App">
+      <Switch>
+        <Route exact path="/">
+          <Navbar />
+        </Route>
+        <Route path="/charts">
+          <Charts coinData={coinData} />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+      </Switch>
+      </div>
+    </Router>
   );
 };
 
