@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Home from "./Home";
+
 
 import { useDarkMode } from "../hooks/useDarkMode";
 
@@ -25,10 +25,6 @@ const Navbar = () => {
         />
       </div>
     </nav>
-    <div>
-      <Home />
-    </div>
-
     </div>
   );
 };

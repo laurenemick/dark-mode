@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 
 import Charts from "./components/Charts";
-import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Home from "./components/Home";
 
 import "./styles.scss";
 
@@ -30,7 +30,7 @@ const App = () => {
       <div className="App">
       <Switch>
         <Route exact path="/">
-          <Navbar />
+          <Home />
         </Route>
         <Route path="/charts">
           <Charts coinData={coinData} />

@@ -37,6 +37,7 @@ const Login = () => {
                     onChange={handleChanges}
                 />
                 <button>Log In</button>
+                <button onClick={clearForm}>Clear</button>
             </form>
         </div>
     )
